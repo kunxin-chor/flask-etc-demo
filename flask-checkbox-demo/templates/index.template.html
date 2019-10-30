@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+      <select name='selected_fruits' multiple>
+          {%for each_fruit in all_fruits %}
+          <option value='{{each_fruit}}'
+          {%if each_fruit in selected_fruits%} selected {%endif%}
+          >{{each_fruit}}</option> 
+          {%endfor%}
+      </select>
+      <br/>
+       <select name='selected_fruits'>
+          {%for each_fruit in all_fruits %}
+          <option value='{{each_fruit}}'
+          {%if each_fruit == selected_single_fruit%} selected {%endif%}
+          >{{each_fruit}}</option> 
+          {%endfor%}
+      </select>
+    </form>
+</body>
+</html>
